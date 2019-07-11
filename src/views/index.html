@@ -6,123 +6,21 @@
       <button>去登录</button>
     </div>
     <ul>
+      {{each data}}
       <li class="activeable list-item" data-positionid="4718568" data-companyid="91954">
-        <img src="//www.lgstatic.com/i/image2/M01/99/FE/CgotOVvEAuSAUFqTAACUGSTrL9Q381.png" class="item-logo">
+        <img src="//www.lgstatic.com/{{$value['companyLogo']}}" class="item-logo">
         <div class="item-desc">
-          <h2 class="item-title">微脉</h2>
+          <h2 class="item-title">{{$value['companyName']}}</h2>
           <p class="item-info">
             <span class="item-pos">
-              售前经理 [ 杭州 ]
+              <b>{{$value['positionName']}} [ {{$value['city']}} ]</b>
             </span>
-            <span class="item-salary">15k-25k</span>
+            <span class="item-salary">{{$value['salary']}}</span>
           </p>
-          <p class="item-time">今天 14:47</p>
+          <p class="item-time">{{$value['createTime']}}</p>
         </div>
       </li>
-      <li class="activeable list-item" data-positionid="4718568" data-companyid="91954">
-        <img src="//www.lgstatic.com/i/image2/M01/99/FE/CgotOVvEAuSAUFqTAACUGSTrL9Q381.png" class="item-logo">
-        <div class="item-desc">
-          <h2 class="item-title">微脉</h2>
-          <p class="item-info">
-            <span class="item-pos">
-              售前经理 [ 杭州 ]
-            </span>
-            <span class="item-salary">15k-25k</span>
-          </p>
-          <p class="item-time">今天 14:47</p>
-        </div>
-      </li>
-      <li class="activeable list-item" data-positionid="4718568" data-companyid="91954">
-        <img src="//www.lgstatic.com/i/image2/M01/99/FE/CgotOVvEAuSAUFqTAACUGSTrL9Q381.png" class="item-logo">
-        <div class="item-desc">
-          <h2 class="item-title">微脉</h2>
-          <p class="item-info">
-            <span class="item-pos">
-              售前经理 [ 杭州 ]
-            </span>
-            <span class="item-salary">15k-25k</span>
-          </p>
-          <p class="item-time">今天 14:47</p>
-        </div>
-      </li>
-      <li class="activeable list-item" data-positionid="4718568" data-companyid="91954">
-        <img src="//www.lgstatic.com/i/image2/M01/99/FE/CgotOVvEAuSAUFqTAACUGSTrL9Q381.png" class="item-logo">
-        <div class="item-desc">
-          <h2 class="item-title">微脉</h2>
-          <p class="item-info">
-            <span class="item-pos">
-              售前经理 [ 杭州 ]
-            </span>
-            <span class="item-salary">15k-25k</span>
-          </p>
-          <p class="item-time">今天 14:47</p>
-        </div>
-      </li>
-      <li class="activeable list-item" data-positionid="4718568" data-companyid="91954">
-        <img src="//www.lgstatic.com/i/image2/M01/99/FE/CgotOVvEAuSAUFqTAACUGSTrL9Q381.png" class="item-logo">
-        <div class="item-desc">
-          <h2 class="item-title">微脉</h2>
-          <p class="item-info">
-            <span class="item-pos">
-              售前经理 [ 杭州 ]
-            </span>
-            <span class="item-salary">15k-25k</span>
-          </p>
-          <p class="item-time">今天 14:47</p>
-        </div>
-      </li>
-      <li class="activeable list-item" data-positionid="4718568" data-companyid="91954">
-        <img src="//www.lgstatic.com/i/image2/M01/99/FE/CgotOVvEAuSAUFqTAACUGSTrL9Q381.png" class="item-logo">
-        <div class="item-desc">
-          <h2 class="item-title">微脉</h2>
-          <p class="item-info">
-            <span class="item-pos">
-              售前经理 [ 杭州 ]
-            </span>
-            <span class="item-salary">15k-25k</span>
-          </p>
-          <p class="item-time">今天 14:47</p>
-        </div>
-      </li>
-      <li class="activeable list-item" data-positionid="4718568" data-companyid="91954">
-        <img src="//www.lgstatic.com/i/image2/M01/99/FE/CgotOVvEAuSAUFqTAACUGSTrL9Q381.png" class="item-logo">
-        <div class="item-desc">
-          <h2 class="item-title">微脉</h2>
-          <p class="item-info">
-            <span class="item-pos">
-              售前经理 [ 杭州 ]
-            </span>
-            <span class="item-salary">15k-25k</span>
-          </p>
-          <p class="item-time">今天 14:47</p>
-        </div>
-      </li>
-      <li class="activeable list-item" data-positionid="4718568" data-companyid="91954">
-        <img src="//www.lgstatic.com/i/image2/M01/99/FE/CgotOVvEAuSAUFqTAACUGSTrL9Q381.png" class="item-logo">
-        <div class="item-desc">
-          <h2 class="item-title">微脉</h2>
-          <p class="item-info">
-            <span class="item-pos">
-              售前经理 [ 杭州 ]
-            </span>
-            <span class="item-salary">15k-25k</span>
-          </p>
-          <p class="item-time">今天 14:47</p>
-        </div>
-      </li>
-      <li class="activeable list-item" data-positionid="4718568" data-companyid="91954">
-        <img src="//www.lgstatic.com/i/image2/M01/99/FE/CgotOVvEAuSAUFqTAACUGSTrL9Q381.png" class="item-logo">
-        <div class="item-desc">
-          <h2 class="item-title">微脉</h2>
-          <p class="item-info">
-            <span class="item-pos">
-              售前经理 [ 杭州 ]
-            </span>
-            <span class="item-salary">15k-25k</span>
-          </p>
-          <p class="item-time">今天 14:47</p>
-        </div>
-      </li>
+      {{/each}}
     </ul>
   </main>
   <nav>

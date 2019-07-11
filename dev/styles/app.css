@@ -724,6 +724,9 @@ a {
   font-family: yofont;
   src: url(/icons/iconfont.woff) format("woff"), url(/icons/iconfont.ttf) format("truetype"); }
 
+/* 
+  文字流式
+*/
 #app {
   height: 100%; }
 
@@ -829,7 +832,6 @@ a {
         flex: 1;
         padding-left: .1rem; }
         .container main > ul li > div.item-desc h2 {
-          font-size: .16rem;
           margin-bottom: 0.06rem;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -841,24 +843,73 @@ a {
           flex-direction: column;
           word-wrap: break-word;
           word-break: break-all; }
+          @media screen and (max-width: 320px) {
+            .container main > ul li > div.item-desc h2 {
+              font-size: 14px; } }
+          @media screen and (min-width: 321px) and (max-width: 375px) {
+            .container main > ul li > div.item-desc h2 {
+              font-size: 16px; } }
+          @media screen and (min-width: 376px) and (max-width: 414px) {
+            .container main > ul li > div.item-desc h2 {
+              font-size: 18px; } }
+          @media screen and (min-width: 415px) {
+            .container main > ul li > div.item-desc h2 {
+              font-size: 20px; } }
         .container main > ul li > div.item-desc p.item-info {
           line-height: .15rem;
           height: .15rem;
           margin-bottom: 0.06rem;
           display: flex; }
           .container main > ul li > div.item-desc p.item-info span.item-pos {
-            flex: 1;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap; }
+            flex: 1; }
+            @media screen and (max-width: 320px) {
+              .container main > ul li > div.item-desc p.item-info span.item-pos {
+                font-size: 12px; } }
+            @media screen and (min-width: 321px) and (max-width: 375px) {
+              .container main > ul li > div.item-desc p.item-info span.item-pos {
+                font-size: 14px; } }
+            @media screen and (min-width: 376px) and (max-width: 414px) {
+              .container main > ul li > div.item-desc p.item-info span.item-pos {
+                font-size: 16px; } }
+            @media screen and (min-width: 415px) {
+              .container main > ul li > div.item-desc p.item-info span.item-pos {
+                font-size: 18px; } }
+            .container main > ul li > div.item-desc p.item-info span.item-pos b {
+              display: block;
+              width: 40vw;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap; }
           .container main > ul li > div.item-desc p.item-info span.item-salary {
             width: .8rem;
-            font-size: .16rem;
             color: #00b38a;
             text-align: right; }
+            @media screen and (max-width: 320px) {
+              .container main > ul li > div.item-desc p.item-info span.item-salary {
+                font-size: 14px; } }
+            @media screen and (min-width: 321px) and (max-width: 375px) {
+              .container main > ul li > div.item-desc p.item-info span.item-salary {
+                font-size: 16px; } }
+            @media screen and (min-width: 376px) and (max-width: 414px) {
+              .container main > ul li > div.item-desc p.item-info span.item-salary {
+                font-size: 18px; } }
+            @media screen and (min-width: 415px) {
+              .container main > ul li > div.item-desc p.item-info span.item-salary {
+                font-size: 20px; } }
         .container main > ul li > div.item-desc p.item-time {
-          color: #888;
-          font-size: .12rem; }
+          color: #888; }
+          @media screen and (max-width: 320px) {
+            .container main > ul li > div.item-desc p.item-time {
+              font-size: 10px; } }
+          @media screen and (min-width: 321px) and (max-width: 375px) {
+            .container main > ul li > div.item-desc p.item-time {
+              font-size: 12px; } }
+          @media screen and (min-width: 376px) and (max-width: 414px) {
+            .container main > ul li > div.item-desc p.item-time {
+              font-size: 14px; } }
+          @media screen and (min-width: 415px) {
+            .container main > ul li > div.item-desc p.item-time {
+              font-size: 16px; } }
   .container nav {
     height: .44rem; }
     .container nav ul {

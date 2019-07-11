@@ -39,6 +39,12 @@ function web_server() {
           pathRewrite: { //重定向  去掉/api
             '^/api': ''
           }
+        }),
+        proxy('/json', {
+          target: 'http://localhost:9000',
+          pathRewrite: {
+            '^/json': ''
+          }
         })
       ]
     }));

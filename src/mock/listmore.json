@@ -1,0 +1,170 @@
+{
+  "result": [
+    {
+      "id": 4967207,
+      "positionName": "前端开发工程师",
+      "city": "北京",
+      "createTime": "今天 18:58",
+      "salary": "16k-30k",
+      "companyId": 21474,
+      "companyLogo": "image1/M00/20/18/CgYXBlU19iSAUtXeAABr7iOZRbs256.jpg",
+      "companyName": "必要商城",
+      "companyFullName": "珠海随变科技有限公司"
+    },
+    {
+      "id": 4970185,
+      "positionName": "推荐系统高级工程师-互娱",
+      "city": "北京",
+      "createTime": "今天 18:53",
+      "salary": "25k-45k",
+      "companyId": 62,
+      "companyLogo": "i/image2/M01/79/0A/CgoB5ltr2A-AM5SFAADbT9jQCn841.jpeg",
+      "companyName": "字节跳动",
+      "companyFullName": "北京字节跳动科技有限公司"
+    },
+    {
+      "id": 4956021,
+      "positionName": "高级java开发工程师",
+      "city": "上海",
+      "createTime": "今天 18:53",
+      "salary": "25k-50k",
+      "companyId": 62,
+      "companyLogo": "i/image2/M01/79/0A/CgoB5ltr2A-AM5SFAADbT9jQCn841.jpeg",
+      "companyName": "字节跳动",
+      "companyFullName": "北京字节跳动科技有限公司"
+    },
+    {
+      "id": 4583628,
+      "positionName": "3D图像算法工程师",
+      "city": "杭州",
+      "createTime": "今天 18:50",
+      "salary": "20k-40k",
+      "companyId": 128744,
+      "companyLogo": "i/image2/M01/69/2C/CgotOVtHKnqASn6lAAA7LVYwR9U560.png",
+      "companyName": "ULSee",
+      "companyFullName": "杭州保新科技有限公司"
+    },
+    {
+      "id": 4707741,
+      "positionName": "Linux C++软件工程师",
+      "city": "杭州",
+      "createTime": "今天 18:49",
+      "salary": "10k-20k",
+      "companyId": 128744,
+      "companyLogo": "i/image2/M01/69/2C/CgotOVtHKnqASn6lAAA7LVYwR9U560.png",
+      "companyName": "ULSee",
+      "companyFullName": "杭州保新科技有限公司"
+    },
+    {
+      "id": 4688960,
+      "positionName": "广告投放经理",
+      "city": "西安",
+      "createTime": "今天 18:48",
+      "salary": "7k-10k",
+      "companyId": 24037,
+      "companyLogo": "i/image/M00/79/60/CgpEMlpC-GSAYL8zAAAVuMElHng652.jpg",
+      "companyName": "龙途互动",
+      "companyFullName": "北京时代一峰信息技术有限公司"
+    },
+    {
+      "id": 4671545,
+      "positionName": "前端工程师",
+      "city": "北京",
+      "createTime": "今天 18:48",
+      "salary": "15k-25k",
+      "companyId": 40286,
+      "companyLogo": "i/image/M00/14/55/CgpFT1j4RPeAONUfAAA8z11OXwE661.jpg",
+      "companyName": "鸿合爱学",
+      "companyFullName": "北京鸿合爱学教育科技有限公司"
+    },
+    {
+      "id": 4617222,
+      "positionName": "3D角色建模师",
+      "city": "广州",
+      "createTime": "今天 18:47",
+      "salary": "8k-15k",
+      "companyId": 138157,
+      "companyLogo": "i/image/M00/94/DA/CgqKkVia3ROAMjI4AAAeERgEZxE420.jpg",
+      "companyName": "冰鸟",
+      "companyFullName": "广州冰鸟网络科技有限公司"
+    },
+    {
+      "id": 4617249,
+      "positionName": "3D角色动作师",
+      "city": "广州",
+      "createTime": "今天 18:47",
+      "salary": "6k-12k",
+      "companyId": 138157,
+      "companyLogo": "i/image/M00/94/DA/CgqKkVia3ROAMjI4AAAeERgEZxE420.jpg",
+      "companyName": "冰鸟",
+      "companyFullName": "广州冰鸟网络科技有限公司"
+    },
+    {
+      "id": 4972154,
+      "positionName": "三维场景美术师",
+      "city": "上海",
+      "createTime": "今天 18:47",
+      "salary": "5k-10k",
+      "companyId": 26126,
+      "companyLogo": "i/image/M00/23/7D/CgpEMlkSrVKAHwpKAAFV9DrskZA931.jpg",
+      "companyName": "维塔士",
+      "companyFullName": "上海维塔士电脑软件有限公司"
+    },
+    {
+      "id": 4604290,
+      "positionName": "用户运营（管培生）",
+      "city": "北京",
+      "createTime": "今天 18:47",
+      "salary": "8k-16k",
+      "companyId": 22666,
+      "companyLogo": "i/image3/M00/28/02/Cgq2xlqa2jWAGAnMAAArW2y3MsY901.jpg",
+      "companyName": "会小二网",
+      "companyFullName": "北京云动数字媒体技术有限公司"
+    },
+    {
+      "id": 4693315,
+      "positionName": "硬件工程师",
+      "city": "杭州",
+      "createTime": "今天 18:45",
+      "salary": "7k-12k",
+      "companyId": 74445,
+      "companyLogo": "i/image/M00/36/2A/Cgp3O1ddD5uAW4JeAAANNle9jAw266.jpg",
+      "companyName": "三汇信息",
+      "companyFullName": "杭州三汇信息工程有限公司"
+    },
+    {
+      "id": 4623647,
+      "positionName": "运营总监（小时光）(000468)",
+      "city": "北京",
+      "createTime": "今天 18:45",
+      "salary": "30k-60k",
+      "companyId": 70,
+      "companyLogo": "i/image/M00/01/A2/CgqKkVZyGeyAUPeJAAAIURCZrmM626.png",
+      "companyName": "宝宝树",
+      "companyFullName": "宝宝树（北京）信息技术有限公司"
+    },
+    {
+      "id": 4642712,
+      "positionName": "资深文案",
+      "city": "上海",
+      "createTime": "今天 18:45",
+      "salary": "15k-20k",
+      "companyId": 242773,
+      "companyLogo": "i/image/M00/5C/91/CgpEMlmJkyiACLZkAABRRaPV3GQ176.png",
+      "companyName": "MadMonkey",
+      "companyFullName": "上海锋侯文化传播有限公司"
+    },
+    {
+      "id": 4705516,
+      "positionName": "游戏运营主管",
+      "city": "广州",
+      "createTime": "今天 18:43",
+      "salary": "8k-14k",
+      "companyId": 50028,
+      "companyLogo": "i/image/M00/7B/07/CgpEMlpExfyAGxH5AAJwDuXR4Cs272.png",
+      "companyName": "PLAY800",
+      "companyFullName": "上海沃势文化传播有限公司广州分公司"
+    }
+  ]
+}
+

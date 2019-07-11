@@ -1,0 +1,19 @@
+/* 
+  文字流式
+*/
+
+
+@mixin contentFont($base_size: 12px) {
+  @media screen and (max-width: 320px) {
+    font-size: $base_size - 2px;
+  }
+  @media screen and (min-width: 321px) and (max-width: 375px) {
+    font-size: $base_size;
+  }
+  @media screen and (min-width: 376px) and (max-width: 414px) {
+    font-size: $base_size + 2px;
+  }
+  @media screen and (min-width: 415px){
+    font-size: $base_size + 4px;
+  }
+}
