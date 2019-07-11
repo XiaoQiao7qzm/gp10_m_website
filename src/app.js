@@ -1,15 +1,5 @@
-// import {name} from './controllers/name';
-// console.log(name);
+const indexTpl = require('./views/index.html');
 
-const Name = require('./controllers/Name');
-const aaTpl = require('./views/aa.art');
+const renderedIndexTpl = template.render(indexTpl, {});
 
-async function getName() {
-  console.log(Name.name);
-  const name = await Name.getName();
-  console.log(name + '---');
-}
-getName();
-console.log(template);
-let newStr = template.render(aaTpl, {title: 'ni hao'});
-console.log(newStr);
+document.querySelector('#app').innerHTML = renderedIndexTpl;

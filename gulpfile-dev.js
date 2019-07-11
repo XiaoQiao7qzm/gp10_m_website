@@ -71,7 +71,7 @@ function packjs() { // webpack 将 浏览器直接解析的require  commenjs规�
             }
           },
           {
-            test: /\.art$/,
+            test: /\.html$/,
             loader: 'string-loader'
           }
         ]

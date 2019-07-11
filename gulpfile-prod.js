@@ -5,6 +5,7 @@ const webpackStream = require('webpack-stream');
 const gulpSass = require('gulp-sass');
 const rev = require('gulp-rev');
 const revCollector = require('gulp-rev-collector');
+const cleanCSS = require('gulp-clean-css');
 
  //4.0.0以上版本  任务的回调一定要有返回值 返回值全部都是异步操作  return  或者 cb()
  
@@ -54,7 +55,7 @@ function packjs() { // webpack 将 浏览器直接解析的require  commenjs规�
             }
           },
           {
-            test: /\.art$/,
+            test: /\.html$/,
             loader: 'string-loader'
           }
         ]
@@ -69,6 +70,7 @@ function packjs() { // webpack 将 浏览器直接解析的require  commenjs规�
 function packCss() {
   return src('./src/styles/app.scss')
   .pipe(gulpSass().on('error', gulpSass.logError))
+  .pipe(cleanCSS({compatibility: 'ie8'}))
   .pipe(rev())
   .pipe(dest('./dist/styles'))
   .pipe(rev.manifest())
