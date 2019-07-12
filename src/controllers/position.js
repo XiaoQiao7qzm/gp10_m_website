@@ -11,9 +11,9 @@ module.exports = {
         $('#app').html(renderedIndexTpl);
 
         // better-saroll 实例化
-        new BScroll('main', {
-          
-        })
+        let bScroll = new BScroll('#main_scroll');
+        // 初始化位置
+        bScroll.scrollTo(0, );
       }
     });
   }
