@@ -72,7 +72,9 @@ function packjs() { // webpack 将 浏览器直接解析的require  commenjs规�
               loader: 'babel-loader',
               options: {
                 presets: ['@babel/preset-env'],
-                plugins: ['@babel/plugin-transform-runtime']
+                plugins: [['@babel/plugin-transform-runtime', {
+                  "helpers": false
+                }]]
               }
             }
           },

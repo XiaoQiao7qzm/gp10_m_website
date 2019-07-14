@@ -1,2 +1,5 @@
-const { renderList } = require('./controllers/position');
-renderList();
+
+
+import posController from './controllers/position';
+
+posController.renderList();

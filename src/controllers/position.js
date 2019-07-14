@@ -1,76 +1,92 @@
-const indexTpl = require('../views/index.html');
+import indexTpl from '../views/index.html';
+import positionListpl from '../views/position_list.html';
+import ajax from '../models/fetch';
 
-module.exports = {
-  loadData: () => {
-    return $.ajax({
-      url: '/api/listmore.json?pageNo=1&pageSize=15',  //后端有接口的场景
-      type: 'GET', // 请求json-server  get为获取  post为添加
-      success: (result) => {
-        return result;
-      }
-    });
-  },
-  renderList: async () => {
-    console.log(this);
-    let result = await this.loadData();
-    let data = result.content.data.page.result;
-    const renderedIndexTpl = template.render(indexTpl, { data });
-    $('#app').html(renderedIndexTpl);
+let currentPage = 1;
+let positionList = [];
+const renderList = async () => {  //module.exports模块中 不要使用async 定义方法
 
-    // better-saroll 实例化
-    let bScroll = new BScroll('#main_scroll', {
-      // probeType: 2 //屏幕滑动时实时派发scroll事件
-      probeType: 1 // 节流2
-    });
-    // 初始化位置
-    bScroll.scrollTo(0, -40);
+  let result = await ajax.get('/api/listmore.json?pageNo=1&pageSize=15');
+  let data = positionList = result.content.data.page.result;
+  let renderedIndexTpl = template.render(indexTpl, {});
+  $('#app').html(renderedIndexTpl);
+  let renderedPositionListTpl = template.render(positionListpl, { data });
+  $('#position-list').html(renderedPositionListTpl);
 
-    let head = $('.head img');
-    let topImgHasClass = head.hasClass('up');
-    let foot = $('.foot img');
-    let bottomImgHasClass = foot.hasClass('down');
+  // better-saroll 实例化
+  let bScroll = new BScroll('#main_scroll', {
+    // probeType: 2 //屏幕滑动时实时派发scroll事件
+    probeType: 1 // 节流2
+  });
+  // 初始化位置
+  bScroll.scrollTo(0, -40);
 
-    // 绑定滑动事件
-    bScroll.on('scroll', function () {
+  let head = $('.head img');
+  let topImgHasClass = head.hasClass('up');
+  let foot = $('.foot img');
+  let bottomImgHasClass = foot.hasClass('down');
 
-      let y = this.y;
-      let maxY = this.maxScrollY - y;
+  // 绑定滑动事件
+  bScroll.on('scroll', function () {
 
-      //下拉， 
-      if (y >= 0) {
-        !topImgHasClass && head.addClass('up');
-        return;
-      }
-      //上拉
-      if (maxY >= 0) {
-        !bottomImgHasClass && foot.addClass('down');
-        return;
-      }
-    });
+    let y = this.y;
+    let maxY = this.maxScrollY - y;
 
-    //绑定手指松开触发的事件
-    bScroll.on('scrollEnd', function () {
-      // 下拉刷新
-      if (this.y >= -40 && this.y < 0) {
-        this.scrollTo(0, -40);
-        head.removeClass('up');
-      } else if (this.y >= 0) {
-        head.attr('src', '/images/ajax-loader.gif');
+    //下拉， 
+    if (y >= 0) {
+      !topImgHasClass && head.addClass('up');
+      return;
+    }
+    //上拉
+    if (maxY >= 0) {
+      !bottomImgHasClass && foot.addClass('down');
+      return;
+    }
+  });
 
-        //异步加载数据
-      }
-      // 下拉加载处理
-      let maxY = this.maxScrollY - this.y;
-      if (maxY > -40 && maxY < 0) {
-        this.scrollTo(0, this.maxScrollY + 40);
-        foot.removeClass('down');
-      } else if (maxY >= 0) {
-        foot.attr('src', '/images/ajax-loader.gif');
-      }
-    });
-  }
+  //绑定手指松开触发的事件
+  bScroll.on('scrollEnd', async function () {
+    // 下拉刷新
+    if (this.y >= -40 && this.y < 0) {
+      this.scrollTo(0, -40);
+      head.removeClass('up');
+    } else if (this.y >= 0) {
+      head.attr('src', '/images/ajax-loader.gif');
+
+      //异步加载数据
+      let result = await ajax.get('/api/listmore.json?pageNo=2&pageSize=2');
+      let data = positionList = [...result.content.data.page.result, ...positionList];
+      let renderedPositionListTpl = template.render(positionListpl, { data });
+      $('#position-list').html(renderedPositionListTpl);
+      this.refresh(); //刷新bScroll高度
+      this.scrollTo(0, -40); 
+      head.attr('src', '/images/arrow.png');
+      head.removeClass('up');
+    }
+    // 上拉加载处理
+    let maxY = this.maxScrollY - this.y;
+    if (maxY > -40 && maxY < 0) {
+      this.scrollTo(0, this.maxScrollY + 40);
+      foot.removeClass('down');
+    } else if (maxY >= 0) {
+      foot.attr('src', '/images/ajax-loader.gif');
+
+      //异步加载数据
+      let result = await ajax.get(`/api/listmore.json?pageNo=${++currentPage}&pageSize=2`);
+      let data = positionList = [...positionList, ...result.content.data.page.result];
+      let renderedPositionListTpl = template.render(positionListpl, { data });
+      $('#position-list').html(renderedPositionListTpl);
+      this.refresh(); //刷新bScroll高度
+      this.scrollTo(0, this.maxScrollY + 40); 
+      foot.attr('src', '/images/arrow.png');
+      foot.removeClass('down');
+    }
+  });
 }
 
+export default {
+  renderList
+}
 /*
   $.camelCase
   $.contains
