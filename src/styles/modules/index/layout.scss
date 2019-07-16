@@ -133,13 +133,17 @@
         font-size: .16rem;
         &.active {
           background: #e7f3f0;
-          b, i {
+          a, i {
             color: #00b38a;
           }
+          
         }
       }
       b {
         font-weight: 100;
+        a {
+          color: #c2cfcc;
+        }
       }
     }
   }

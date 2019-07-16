@@ -974,7 +974,9 @@ a {
         font-size: .16rem; }
         .container nav ul li.active {
           background: #e7f3f0; }
-          .container nav ul li.active b, .container nav ul li.active i {
+          .container nav ul li.active a, .container nav ul li.active i {
             color: #00b38a; }
       .container nav ul b {
         font-weight: 100; }
+        .container nav ul b a {
+          color: #c2cfcc; }
