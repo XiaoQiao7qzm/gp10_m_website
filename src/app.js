@@ -1,5 +1,10 @@
-import posController from './controllers/position';
-import router from './router/hash';
+// import indexController from './controllers/index';
+// import posController from './controllers/position';
+import Router from './router/index';
 
-posController.renderList();
-router.init();
+// indexController.renderIndex();
+// posController.renderList();
+
+new Router({
+  mode: 'hash'
+})

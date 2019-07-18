@@ -70,12 +70,12 @@ function packjs() { // webpack 将 浏览器直接解析的require  commenjs规�
             exclude: /node_modules/,
             use: {
               loader: 'babel-loader',
-              options: {
-                presets: ['@babel/preset-env'],
-                plugins: [['@babel/plugin-transform-runtime', {
-                  "helpers": false
-                }]]
-              }
+              // options: {
+              //   presets: ['@babel/preset-env'],
+              //   plugins: [['@babel/plugin-transform-runtime', {
+              //     "helpers": false
+              //   }]]
+              // }
             }
           },
           {

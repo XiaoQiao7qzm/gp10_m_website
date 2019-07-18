@@ -1,16 +1,16 @@
-import indexTpl from '../views/index.html';
-import positionListpl from '../views/position_list.html';
+import positionListTpl from '../views/position_list.html';
+import positionTpl from '../views/position.html';
+
 import ajax from '../models/fetch';
 
 let currentPage = 1;
 let positionList = [];
-const renderList = async () => {  //module.exports模块中 不要使用async 定义方法
+const render = async () => {  //module.exports模块中 不要使用async 定义方法
 
   let result = await ajax.get('/api/listmore.json?pageNo=1&pageSize=15');
   let data = positionList = result.content.data.page.result;
-  let renderedIndexTpl = template.render(indexTpl, {});
-  $('#app').html(renderedIndexTpl);
-  let renderedPositionListTpl = template.render(positionListpl, { data });
+  $('#main_scroll').html(positionTpl);
+  let renderedPositionListTpl = template.render(positionListTpl, { data });
   $('#position-list').html(renderedPositionListTpl);
 
   // better-saroll 实例化
@@ -56,7 +56,7 @@ const renderList = async () => {  //module.exports模块中 不要使用async �
       //异步加载数据
       let result = await ajax.get('/api/listmore.json?pageNo=2&pageSize=2');
       let data = positionList = [...result.content.data.page.result, ...positionList];
-      let renderedPositionListTpl = template.render(positionListpl, { data });
+      let renderedPositionListTpl = template.render(positionListTpl, { data });
       $('#position-list').html(renderedPositionListTpl);
       this.refresh(); //刷新bScroll高度
       this.scrollTo(0, -40); 
@@ -74,7 +74,7 @@ const renderList = async () => {  //module.exports模块中 不要使用async �
       //异步加载数据
       let result = await ajax.get(`/api/listmore.json?pageNo=${++currentPage}&pageSize=2`);
       let data = positionList = [...positionList, ...result.content.data.page.result];
-      let renderedPositionListTpl = template.render(positionListpl, { data });
+      let renderedPositionListTpl = template.render(positionListTpl, { data });
       $('#position-list').html(renderedPositionListTpl);
       this.refresh(); //刷新bScroll高度
       this.scrollTo(0, this.maxScrollY + 40); 
@@ -85,7 +85,7 @@ const renderList = async () => {  //module.exports模块中 不要使用async �
 }
 
 export default {
-  renderList
+  render
 }
 /*
   $.camelCase
