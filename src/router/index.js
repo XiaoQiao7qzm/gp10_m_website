@@ -2,6 +2,9 @@ import index from '../controllers/index';
 import position from '../controllers/position';
 import search from '../controllers/search';
 import profile from '../controllers/profile';
+import details from '../controllers/details';
+import home from '../controllers/home';
+import error from '../controllers/error';
 
 export default class Router {
   constructor(obj) {
@@ -9,9 +12,13 @@ export default class Router {
     //this.mode = 'history'
     //路由配置
     this.routes = {
-      '/position': position,
-      '/search': search,
-      '/profile': profile
+      '/index': index,
+      '/index/home': home,
+      '/index/details': details,
+      '/index/home/position': position,
+      '/index/home/search': search,
+      '/index/home/profile': profile,
+      '/error': error,
     };
     this.init();
   }
@@ -54,11 +61,11 @@ export default class Router {
     if(e.newURL) {
       let newURL = e.newURL.split('#')[1];
       let oldURL = e.oldURL.split('#')[1];
-      /* console.dir({
-        oldURL, newURL
-      }); */
+      // console.dir({
+      //   oldURL, newURL
+      // });
     }
-    let currentURL = location.hash.slice(1).split('?')[0] || '/position';
+    let currentURL = location.hash.slice(1).split('?')[0] || '/index/home/position';
     this.loadView(currentURL);
   }
   /* 
@@ -82,7 +89,7 @@ export default class Router {
     this.currentURLlist = currentURL.slice(1).split('/');
     this.url = "";
     this.currentURLlist.forEach((item, index) => {
-      this.url = '/' + item;
+      this.url += '/' + item;
       this.controllerName = this.routes[this.url];
       //404页面处理
       if(!this.controllerName) {
@@ -95,7 +102,9 @@ export default class Router {
       } else {
         this.controller(this.controllerName);
       }
-    })
+    });
+    //记录链接数组， 后续处理自己组件
+    this.oldURL = JSON.parse(JSON.stringify(this.currentURLlist));
   }
   /* 
     处理嵌套路由 
@@ -103,7 +112,18 @@ export default class Router {
     @param {number} index 链接list中当前索引
   */
   handleSubRouter(item, index) {
-
+    //新路由是旧路由的子集
+    if(this.oldURL.length < this.currentURLlist.length) {
+      if(item !== this.oldURL[index]) {
+        this.controller(this.controllerName);
+      }
+    }
+    //新路由是旧路由的父级  
+    if(this.oldURL.length > this.currentURLlist.length) {
+      if(index === this.currentURLlist.length - 1) {
+        this.controller(this.controllerName);
+      }
+    }
   }
   /* 
     404页面处理
@@ -127,7 +147,12 @@ export default class Router {
     手动跳转路由 @param {string} path
   */
   push(path) {
-
+    if(this.mode === 'hash') {
+      location.href = '#' + path;
+    } else {
+      history.pushState({ path: path }, null, path);
+      this.loadView(path.split('?'[0]));
+    }
   }
   /* 
     绑定组件对象中events 事件
@@ -135,7 +160,23 @@ export default class Router {
     ！ 仅支持绑定当前组件下的DOM事件
   */
   bindEvents() {
-
+    let self = this;
+    let eventType = "";
+    let selector = "";
+    let handleEvent = "";
+    let Event = function(eventType, selector, handleEvent) {
+      self.$el.find(selector).on(eventType, (e) => {
+        self[handleEvent](e)
+      })
+    }
+    for(let index in self.events) {
+      eventType = index.match(/[0-9A-Za-z]+\s/i)[0].trim();
+      selector = index.replace(/[0-9A-Za-z]+\s/i, "").trim();
+      handleEvent = self.events[index];
+      let obj = new Event(eventType, selector, handleEvent);
+      obj = null;
+    }
+    Event = null;
   }
   /* 
     导航激活显示

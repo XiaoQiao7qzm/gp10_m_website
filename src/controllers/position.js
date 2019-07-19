@@ -1,10 +1,17 @@
 import positionListTpl from '../views/position_list.html';
 import positionTpl from '../views/position.html';
+import Router from '../router/index';
 
 import ajax from '../models/fetch';
 
 let currentPage = 1;
 let positionList = [];
+
+const gotoPage = (id) => {
+  let router = new Router({ mode: 'hash' });
+  router.push('/index/details?id=' + id);
+}
+
 const render = async () => {  //module.exports模块中 不要使用async 定义方法
 
   let result = await ajax.get('/api/listmore.json?pageNo=1&pageSize=15');
@@ -16,7 +23,8 @@ const render = async () => {  //module.exports模块中 不要使用async 定义
   // better-saroll 实例化
   let bScroll = new BScroll('#main_scroll', {
     // probeType: 2 //屏幕滑动时实时派发scroll事件
-    probeType: 1 // 节流2
+    probeType: 1, // 节流2
+    click: true
   });
   // 初始化位置
   bScroll.scrollTo(0, -40);
@@ -82,6 +90,10 @@ const render = async () => {  //module.exports模块中 不要使用async 定义
       foot.removeClass('down');
     }
   });
+
+  $('#position-list').on('click', 'li', (e) => {
+    gotoPage($(e.currentTarget).attr('data-positionid'));
+  })
 }
 
 export default {

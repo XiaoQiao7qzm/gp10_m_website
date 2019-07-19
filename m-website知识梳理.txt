@@ -1,0 +1,59 @@
+m站 -拉勾网 知识总结
+
+前后端架构  
+-前后端分离 前端通过http请求后端接口 通过 index.html/index.php 和前端对接
+
+-前端架构
+RMVC架构 + gulp(前端自动化工程) + 模块化（CommonJs, ES module）+ sass + 前端模板（art-template）+ mock数据（json-server）+ UI框架（yo3） +  JS库（zepto、better-scroll、swiper）+ 路由（hash/history）
+
+1. gulp
+-启动webserver
+  --gulp-webserver
+-JS模块化
+  --webpack-stream
+-CSS预处理
+  --gulp-sass
+-Mock数据
+  --http-proxy-middleware
+-生产环境和开发环境分离
+  --dev/prod两个文件 "dev": "gulp -f gulpfile-dev.js"
+-版本号控制
+  --gulp-rev rev-collector
+
+2. RMVC架构
+R —> Router 路由 路径切换
+M —> Model 数据 数据源
+V —> View 视图 html+css
+C —> Controller 控制器（逻辑） 交互逻辑 js
+
+3. 模块化（CommonJs ES module 规范）
+面试 两者区别
+
+4. scss --gulp-scss
+
+5. 前端模板 artTemplate
+
+6.mock数据
+-有后端接口 proxy代理
+-无后端接口 代理 + json-server
+/* 
+"mock": "json-server ./src/mock/mock.js -r ./src/mock/router.json -p 9000 -w"  配置路由  只能get请求
+*/
+/* 
+    "mock": "json-server ./src/mock/listmore.json -p 9000 -w"
+get post都可以请求  还可以post添加数据
+*/
+
+/* 
+  软件 insomnia
+*/
+
+7. UI框架（yo3）
+  -reset.scss border ellipsis
+8. js库
+zepto better-scroll swiper
+
+9. 路由 (hash/history)
+
+
+
